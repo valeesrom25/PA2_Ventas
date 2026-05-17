@@ -1,4 +1,5 @@
-Crea un aplicativo web en Streamlit para un proyecto de machine learning utilizando el dataset Superstore Sales. 
-El aplicativo debe permitir cargar un archivo CSV, mostrar una vista previa del dataset y su dimensión, procesar los datos eliminando columnas innecesarias y convirtiendo variables categóricas a variables numéricas mediante get_dummies. 
-Además, debe cargar un modelo Random Forest almacenado en formato .pkl desde una carpeta llamada “modelos” y realizar predicciones de ventas mostrando los resultados en pantalla.
-La aplicación también debe incluir el nombre del estudiante, código ISIL y un enlace al cuaderno de Google Colab en modo lector.
+Crea un aplicativo web en Streamlit para un proyecto de machine learning utilizando el dataset Superstore Sales. La aplicación debe permitir cargar un archivo CSV, mostrar una vista previa del dataset y sus dimensiones, procesar los datos eliminando columnas innecesarias y convirtiendo variables categóricas mediante get_dummies. Además, debe cargar un modelo Random Forest almacenado en formato .pkl desde una carpeta llamada “modelos” y utilizarlo para realizar predicciones de ventas.
+
+La aplicación debe mostrar las ventas estimadas junto con información relevante del pedido, como categoría, región, cantidad y descuento, para que las predicciones tengan contexto y sean fáciles de interpretar. También debe incluir una explicación sencilla sobre qué representan las predicciones realizadas por el modelo.
+
+Finalmente, el aplicativo debe mostrar métricas visuales como promedio, venta máxima y venta mínima predicha, además de un gráfico que permita visualizar la distribución de las ventas estimadas. La página debe incluir el nombre del estudiante, código ISIL y un enlace al cuaderno de Google Colab en modo lector.

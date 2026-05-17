@@ -49,8 +49,41 @@ if archivo is not None:
 
     df = df.reindex(columns=columnas_modelo, fill_value=0)
 
-    # Predicción
-    predicciones = modelo.predict(df)
+  # Predicciones
+predicciones = modelo.predict(df)
 
-    st.subheader("Predicciones")
-    st.write(predicciones)
+# DataFrame
+pred_df = pd.DataFrame({
+    "Predicción de Ventas": predicciones
+})
+
+# Mostrar tabla
+st.subheader("Predicciones")
+st.dataframe(pred_df.head(20))
+
+# Estadísticas
+st.subheader("Resumen Estadístico")
+
+st.write("Cantidad de predicciones:", len(predicciones))
+st.write("Promedio:", round(predicciones.mean(), 2))
+st.write("Máximo:", round(predicciones.max(), 2))
+st.write("Mínimo:", round(predicciones.min(), 2))
+
+# Gráfico de barras
+st.subheader("Gráfico de Predicciones")
+st.bar_chart(pred_df.head(20))
+
+# Histograma
+st.subheader("Distribución de Predicciones")
+
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+
+ax.hist(predicciones, bins=20)
+
+ax.set_title("Distribución de Predicciones")
+ax.set_xlabel("Ventas Predichas")
+ax.set_ylabel("Frecuencia")
+
+st.pyplot(fig)
